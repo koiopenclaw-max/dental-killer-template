@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Д-р Иванова Дентал — Модерна стоматология в София</title>
+<meta name="description" content="Д-р Иванова Дентал — модерна стоматологична клиника в сърцето на София. Имплантология, естетична стоматология, ортодонтия. Запазете час онлайн.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --sage:#6B7F5E;--sage-light:#8A9E7C;--sage-dark:#4F6045;
+  --cream:#F5F0E8;--cream-dark:#EDE5D8;
+  --charcoal:#2C2C2C;--charcoal-light:#4A4A4A;
+  --gold:#C5A55A;--gold-light:#D4BA7A;
+  --white:#FFFFFF;--text:#3A3A3A;--text-light:#6B6B6B;
+  --font-display:'DM Serif Display',Georgia,serif;
+  --font-body:'Outfit',system-ui,sans-serif;
+  --radius:12px;--radius-sm:8px;
+  --shadow:0 4px 24px rgba(0,0,0,0.08);
+  --shadow-hover:0 12px 40px rgba(0,0,0,0.12);
+  --transition:0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--font-body);color:var(--text);background:var(--cream);line-height:1.7;font-weight:400;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit;transition:color 0.3s}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:1.2}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* ========= HEADER ========= */
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;transition:all 0.4s}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1400px;margin:0 auto}
+.header.scrolled{background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);box-shadow:0 2px 20px rgba(0,0,0,0.06)}
+.logo{font-family:var(--font-display);font-size:1.4rem;color:var(--white);transition:color 0.4s;white-space:nowrap}
+.logo span{color:var(--gold)}
+.header.scrolled .logo{color:var(--charcoal)}
+.nav{display:flex;align-items:center;gap:32px}
+.nav a{font-size:0.9rem;font-weight:500;letter-spacing:0.02em;color:rgba(255,255,255,0.85);transition:color 0.3s}
+.nav a:hover{color:var(--gold)}
+.header.scrolled .nav a{color:var(--text-light)}
+.header.scrolled .nav a:hover{color:var(--sage)}
+.header-phone{display:flex;align-items:center;gap:8px;font-weight:600;font-size:0.95rem;color:var(--white);transition:color 0.4s}
+.header-phone svg{width:18px;height:18px;fill:currentColor}
+.header.scrolled .header-phone{color:var(--charcoal)}
+.btn-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:var(--gold);color:var(--white);font-family:var(--font-body);font-weight:600;font-size:0.9rem;border:none;border-radius:50px;cursor:pointer;transition:all 0.3s;letter-spacing:0.02em}
+.btn-cta:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(197,165,90,0.3)}
+.btn-cta-outline{background:transparent;border:2px solid rgba(255,255,255,0.6);color:var(--white)}
+.btn-cta-outline:hover{border-color:var(--white);background:rgba(255,255,255,0.1)}
+.btn-cta-sage{background:var(--sage);color:var(--white)}
+.btn-cta-sage:hover{background:var(--sage-light);box-shadow:0 8px 24px rgba(107,127,94,0.3)}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.mobile-toggle span{width:24px;height:2px;background:var(--white);transition:all 0.3s}
+.header.scrolled .mobile-toggle span{background:var(--charcoal)}
+
+/* ========= HERO ========= */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.05);transition:transform 8s ease-out}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(44,44,44,0.75) 0%,rgba(44,44,44,0.3) 50%,rgba(107,127,94,0.2) 100%)}
+.hero-content{position:relative;z-index:2;max-width:680px;padding:120px 24px 80px;margin-left:8%}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;background:rgba(197,165,90,0.2);border:1px solid rgba(197,165,90,0.4);border-radius:50px;color:var(--gold-light);font-size:0.85rem;font-weight:500;letter-spacing:0.05em;margin-bottom:24px;backdrop-filter:blur(4px)}
+.hero h1{font-size:clamp(2.4rem,5vw,3.8rem);color:var(--white);margin-bottom:20px;line-height:1.15}
+.hero h1 em{font-style:italic;color:var(--gold-light)}
+.hero p{font-size:1.15rem;color:rgba(255,255,255,0.8);margin-bottom:36px;max-width:520px;line-height:1.8}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
+
+/* ========= TRUST STRIP ========= */
+.trust-strip{background:var(--white);border-bottom:1px solid rgba(0,0,0,0.05)}
+.trust-inner{display:grid;grid-template-columns:repeat(3,1fr);text-align:center}
+.trust-item{padding:28px 20px;border-right:1px solid rgba(0,0,0,0.06)}
+.trust-item:last-child{border-right:none}
+.trust-number{font-family:var(--font-display);font-size:2rem;color:var(--sage);margin-bottom:4px}
+.trust-label{font-size:0.85rem;color:var(--text-light);font-weight:500;letter-spacing:0.03em}
+
+/* ========= SECTIONS ========= */
+.section{padding:100px 0}
+.section-header{text-align:center;max-width:600px;margin:0 auto 60px}
+.section-label{display:inline-block;font-size:0.8rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:12px}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.6rem);color:var(--charcoal);margin-bottom:16px}
+.section-desc{font-size:1.05rem;color:var(--text-light);line-height:1.8}
+.bg-white{background:var(--white)}
+
+/* ========= SERVICES ========= */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{background:var(--white);border-radius:var(--radius);padding:40px 32px;border:1px solid rgba(0,0,0,0.05);transition:all var(--transition);cursor:pointer;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform 0.4s;transform-origin:left}
+.service-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-hover)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:56px;height:56px;background:linear-gradient(135deg,var(--sage),var(--sage-light));border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:1.5rem;color:var(--white)}
+.service-card h3{font-size:1.25rem;color:var(--charcoal);margin-bottom:12px}
+.service-card p{font-size:0.92rem;color:var(--text-light);margin-bottom:16px;line-height:1.7}
+.service-link{font-size:0.88rem;font-weight:600;color:var(--sage);display:inline-flex;align-items:center;gap:6px;transition:gap 0.3s}
+.service-card:hover .service-link{gap:12px;color:var(--gold)}
+
+/* ========= ABOUT ========= */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-image{position:relative;border-radius:var(--radius);overflow:hidden}
+.about-image img{width:100%;height:500px;object-fit:cover;border-radius:var(--radius)}
+.about-image::after{content:'';position:absolute;bottom:-20px;right:-20px;width:180px;height:180px;border:3px solid var(--gold);border-radius:var(--radius);z-index:-1}
+.about-badge{position:absolute;bottom:24px;left:24px;background:var(--gold);color:var(--white);padding:16px 24px;border-radius:var(--radius-sm);text-align:center}
+.about-badge .num{font-family:var(--font-display);font-size:2.2rem;line-height:1}
+.about-badge .label{font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-top:4px}
+.about-content .section-label{text-align:left}
+.about-content h2{font-size:clamp(1.6rem,3vw,2.2rem);color:var(--charcoal);margin-bottom:20px;text-align:left}
+.about-content p{color:var(--text-light);margin-bottom:16px;line-height:1.8}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.about-feature{display:flex;align-items:center;gap:10px;font-weight:500;font-size:0.92rem;color:var(--charcoal)}
+.about-feature .check{width:24px;height:24px;background:var(--sage);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:0.7rem;flex-shrink:0}
+
+/* ========= GALLERY ========= */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.gallery-item{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;cursor:pointer}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}
+.gallery-item:hover img{transform:scale(1.08)}
+.gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(44,44,44,0.7),transparent 60%);display:flex;align-items:flex-end;padding:24px;opacity:0;transition:opacity 0.4s}
+.gallery-item:hover .gallery-overlay{opacity:1}
+.gallery-overlay span{color:var(--white);font-weight:600;font-size:0.9rem}
+
+/* ========= TESTIMONIALS ========= */
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testimonial-card{background:var(--white);border-radius:var(--radius);padding:36px 28px;border:1px solid rgba(0,0,0,0.05);transition:all var(--transition)}
+.testimonial-card:hover{box-shadow:var(--shadow)}
+.testimonial-stars{color:var(--gold);font-size:1rem;letter-spacing:2px;margin-bottom:16px}
+.testimonial-text{font-size:0.95rem;color:var(--text-light);line-height:1.8;margin-bottom:20px;font-style:italic}
+.testimonial-author{display:flex;align-items:center;gap:14px}
+.testimonial-avatar{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.testimonial-name{font-weight:600;font-size:0.92rem;color:var(--charcoal)}
+.testimonial-role{font-size:0.8rem;color:var(--text-light)}
+
+/* ========= FAQ ========= */
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(0,0,0,0.08);overflow:hidden}
+.faq-question{display:flex;align-items:center;justify-content:space-between;padding:24px 0;cursor:pointer;font-weight:600;font-size:1.02rem;color:var(--charcoal);transition:color 0.3s}
+.faq-question:hover{color:var(--sage)}
+.faq-icon{width:32px;height:32px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;transition:all 0.3s;flex-shrink:0;font-size:1.2rem;color:var(--sage)}
+.faq-item.active .faq-icon{background:var(--sage);color:var(--white);transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.4s ease}
+.faq-item.active .faq-answer{max-height:300px}
+.faq-answer p{padding-bottom:24px;color:var(--text-light);line-height:1.8;font-size:0.95rem}
+
+/* ========= CONTACT ========= */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.contact-info{display:flex;flex-direction:column;gap:28px}
+.contact-item{display:flex;gap:16px;align-items:flex-start}
+.contact-icon{width:48px;height:48px;background:var(--sage);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--white);font-size:1.2rem;flex-shrink:0}
+.contact-item h4{font-family:var(--font-body);font-weight:600;font-size:0.95rem;color:var(--charcoal);margin-bottom:4px}
+.contact-item p{font-size:0.9rem;color:var(--text-light)}
+.contact-form{background:var(--white);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow)}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-weight:500;font-size:0.88rem;color:var(--charcoal);margin-bottom:8px}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:14px 18px;border:1px solid rgba(0,0,0,0.1);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:0.95rem;transition:border-color 0.3s;background:var(--cream);color:var(--text)}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--sage);background:var(--white)}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+/* ========= FOOTER ========= */
+.footer{background:var(--charcoal);color:rgba(255,255,255,0.7);padding:60px 0 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px}
+.footer-brand p{margin-top:16px;font-size:0.9rem;line-height:1.8;max-width:300px}
+.footer h4{font-family:var(--font-display);color:var(--white);font-size:1.1rem;margin-bottom:20px}
+.footer ul{list-style:none}
+.footer ul li{margin-bottom:10px}
+.footer ul a{font-size:0.9rem;transition:color 0.3s}
+.footer ul a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding:24px 0;text-align:center;font-size:0.85rem}
+
+/* ========= ANIMATIONS ========= */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 0.8s ease,transform 0.8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:0.1s}
+.reveal-delay-2{transition-delay:0.2s}
+.reveal-delay-3{transition-delay:0.3s}
+.reveal-delay-4{transition-delay:0.4s}
+.reveal-delay-5{transition-delay:0.5s}
+
+/* ========= MOBILE ========= */
+@media(max-width:968px){
+  .nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(44,44,44,0.98);flex-direction:column;justify-content:center;align-items:center;gap:24px;z-index:999}
+  .nav.open{display:flex}
+  .nav a{font-size:1.3rem;color:var(--white)}
+  .mobile-toggle{display:flex;z-index:1001}
+  .hero-content{margin-left:0;padding:140px 24px 80px}
+  .services-grid,.gallery-grid,.testimonials-grid{grid-template-columns:1fr}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .about-image::after{display:none}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .form-row{grid-template-columns:1fr}
+  .trust-inner{grid-template-columns:1fr}
+  .trust-item{border-right:none;border-bottom:1px solid rgba(0,0,0,0.06)}
+  .trust-item:last-child{border-bottom:none}
+  .header-phone{display:none}
+}
+@media(min-width:969px){.mobile-toggle{display:none!important}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="#" class="logo">Д-р Иванова <span>Дентал</span></a>
+    <nav class="nav" id="nav">
+      <a href="#services" onclick="closeNav()">Услуги</a>
+      <a href="#about" onclick="closeNav()">За нас</a>
+      <a href="#gallery" onclick="closeNav()">Галерия</a>
+      <a href="#testimonials" onclick="closeNav()">Отзиви</a>
+      <a href="#faq" onclick="closeNav()">Въпроси</a>
+      <a href="#contact" onclick="closeNav()">Контакти</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:20px">
+      <a href="tel:+359888123456" class="header-phone">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/></svg>
+        0888 123 456
+      </a>
+      <a href="#contact" class="btn-cta">Запази час</a>
+      <div class="mobile-toggle" id="menuToggle" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&q=80" alt="Модерен стоматологичен кабинет" loading="eager">
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge reveal">✦ Стоматологична клиника от 2009 г.</div>
+    <h1 class="reveal reveal-delay-1">Грижа за усмивката ви с <em>внимание към всеки детайл</em></h1>
+    <p class="reveal reveal-delay-2">Модерна стоматология в сърцето на София. Д-р Иванова и екип ви предлагат индивидуален подход и съвременни технологии за красива и здрава усмивка.</p>
+    <div class="hero-buttons reveal reveal-delay-3">
+      <a href="#contact" class="btn-cta">Запази час →</a>
+      <a href="tel:+359888123456" class="btn-cta btn-cta-outline">☎ 0888 123 456</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-inner container">
+    <div class="trust-item reveal">
+      <div class="trust-number">15+</div>
+      <div class="trust-label">Години опит</div>
+    </div>
+    <div class="trust-item reveal reveal-delay-1">
+      <div class="trust-number">5 000+</div>
+      <div class="trust-label">Доволни пациенти</div>
+    </div>
+    <div class="trust-item reveal reveal-delay-2">
+      <div class="trust-number">12 000+</div>
+      <div class="trust-label">Успешни процедури</div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Нашите услуги</div>
+      <h2 class="section-title">Цялостна грижа за вашата усмивка</h2>
+      <p class="section-desc">Предлагаме пълен спектър от стоматологични услуги с внимание към комфорта и дългосрочния резултат.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">🦷</div>
+        <h3>Имплантология</h3>
+        <p>Възстановяване на липсващи зъби с висококачествени импланти и естествен краен резултат.</p>
+        <span class="service-link">Научи повече →</span>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">✨</div>
+        <h3>Естетична стоматология</h3>
+        <p>Фасети, бондинг и дизайн на усмивката за перфектен визуален ефект.</p>
+        <span class="service-link">Научи повече →</span>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">⟡</div>
+        <h3>Ортодонтия</h3>
+        <p>Невидими шини и брекети за правилна захапка при деца и възрастни.</p>
+        <span class="service-link">Научи повече →</span>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon">🧒</div>
+        <h3>Детска стоматология</h3>
+        <p>Нежна грижа в приятна обстановка — формираме добри навици от малки.</p>
+        <span class="service-link">Научи повече →</span>
+      </div>
+      <div class="service-card reveal reveal-delay-4">
+        <div class="service-icon">◇</div>
+        <h3>Професионално избелване</h3>
+        <p>Безопасно и ефективно избелване до 8 нюанса по-бяло за едно посещение.</p>
+        <span class="service-link">Научи повече →</span>
+      </div>
+      <div class="service-card reveal reveal-delay-5">
+        <div class="service-icon">⚕</div>
+        <h3>Орална хирургия</h3>
+        <p>Екстракции, костни присадки и хирургични процедури с минимален дискомфорт.</p>
+        <span class="service-link">Научи повече →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section bg-white" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&q=80" alt="Д-р Иванова">
+        <div class="about-badge">
+          <div class="num">15+</div>
+          <div class="label">Години опит</div>
+        </div>
+      </div>
+      <div class="about-content reveal reveal-delay-1">
+        <div class="section-label">За нас</div>
+        <h2>Модерна клиника с <em>човешко отношение</em></h2>
+        <p>Д-р Мария Иванова основава клиниката през 2009 г. с една ясна визия — да предлага стоматология от световно ниво в уютна, приветлива обстановка.</p>
+        <p>Нашият екип от 8 специалисти комбинира най-новите технологии — дигитален скенер, 3D планиране, лазерно лечение — с индивидуален подход към всеки пациент.</p>
+        <div class="about-features">
+          <div class="about-feature"><span class="check">✓</span> Дигитален скенер</div>
+          <div class="about-feature"><span class="check">✓</span> 3D планиране</div>
+          <div class="about-feature"><span class="check">✓</span> Лазерно лечение</div>
+          <div class="about-feature"><span class="check">✓</span> Седация при нужда</div>
+          <div class="about-feature"><span class="check">✓</span> Гаранция за импланти</div>
+          <div class="about-feature"><span class="check">✓</span> Безлихвено разсрочване</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Нашата работа</div>
+      <h2 class="section-title">Усмивки, които говорят сами</h2>
+      <p class="section-desc">Разгледайте резултатите от нашите процедури — всяка усмивка е уникална история.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80" alt="Резултат 1" loading="lazy">
+        <div class="gallery-overlay"><span>Фасети — пълна трансформация</span></div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-1">
+        <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&q=80" alt="Резултат 2" loading="lazy">
+        <div class="gallery-overlay"><span>Избелване — 6 нюанса</span></div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-2">
+        <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=80" alt="Резултат 3" loading="lazy">
+        <div class="gallery-overlay"><span>Имплантиране — горна челюст</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section bg-white" id="testimonials">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Отзиви</div>
+      <h2 class="section-title">Какво казват нашите пациенти</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Цял живот се страхувах от зъболекар. Тук за първи път се почувствах спокойна. Екипът е невероятно внимателен и професионален."</p>
+        <div class="testimonial-author">
+          <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Мария" loading="lazy">
+          <div>
+            <div class="testimonial-name">Мария Петрова</div>
+            <div class="testimonial-role">Пациент от 3 години</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Направих си импланти и разликата е невероятна. Изглеждат напълно естествено. Благодаря на целия екип за търпението!"</p>
+        <div class="testimonial-author">
+          <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Георги" loading="lazy">
+          <div>
+            <div class="testimonial-name">Георги Димитров</div>
+            <div class="testimonial-role">Пациент от 5 години</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Водя и двете си деца тук. Обожават д-р Иванова! Никога не плачат, което за мен е най-добрият показател."</p>
+        <div class="testimonial-author">
+          <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Елена" loading="lazy">
+          <div>
+            <div class="testimonial-name">Елена Тодорова</div>
+            <div class="testimonial-role">Пациент от 2 години</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Въпроси и отговори</div>
+      <h2 class="section-title">Често задавани въпроси</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Колко струва първичният преглед?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer"><p>Първичният преглед с дигитална диагностика е на стойност 60 лв. Включва пълен оглед, рентгенова снимка и индивидуален план за лечение. При започване на лечение в рамките на 30 дни — прегледът е безплатен.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Работите ли с Националната здравноосигурителна каса?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer"><p>Да, имаме договор с НЗОК. Покриваме обтурации, екстракции и профилактични прегледи по здравна книжка. За подробности за покритието — свържете се с нас.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Колко време отнема поставянето на имплант?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer"><p>Самата хирургична процедура отнема 30-60 минути на имплант. Периодът на интеграция е 3-6 месеца, след което се поставя короната. Предлагаме и експресни импланти с натоварване в рамките на 24 часа.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-3">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Болезнено ли е избелването на зъби?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer"><p>Професионалното избелване е безболезнена процедура. Възможна е лека чувствителност в първите 24-48 часа, която отшумява напълно. Използваме съвременни гелове с минимално дразнене.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-4">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Предлагате ли разсрочено плащане?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer"><p>Да! Предлагаме безлихвено разсрочване до 12 месеца за процедури над 500 лв. Работим и с TBI Bank за кредитиране на по-мащабни лечения. Приемаме всички карти.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section bg-white" id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Свържете се с нас</div>
+      <h2 class="section-title">Запазете вашия час</h2>
+      <p class="section-desc">Попълнете формата или ни се обадете — ще ви свържем в рамките на 1 работен час.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Адрес</h4>
+            <p>бул. Витоша 89, ет. 2<br>1463 София, България</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <h4>Телефон</h4>
+            <p><a href="tel:+359888123456" style="color:var(--sage);font-weight:600">0888 123 456</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉</div>
+          <div>
+            <h4>Имейл</h4>
+            <p>info@dr-ivanova-dental.bg</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <h4>Работно време</h4>
+            <p>Пон – Пет: 08:30 – 19:00<br>Събота: 09:00 – 14:00<br>Неделя: почивен ден</p>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form reveal reveal-delay-1" onsubmit="event.preventDefault();alert('Благодарим! Ще се свържем с вас скоро.')">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Вашето име</label>
+            <input type="text" placeholder="Иван Иванов" required>
+          </div>
+          <div class="form-group">
+            <label>Телефон</label>
+            <input type="tel" placeholder="0888 000 000" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Имейл</label>
+          <input type="email" placeholder="ivan@example.com">
+        </div>
+        <div class="form-group">
+          <label>Интересувам се от</label>
+          <select>
+            <option value="">Изберете услуга</option>
+            <option>Преглед и консултация</option>
+            <option>Имплантология</option>
+            <option>Естетична стоматология</option>
+            <option>Ортодонтия</option>
+            <option>Детска стоматология</option>
+            <option>Избелване</option>
+            <option>Друго</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Съобщение</label>
+          <textarea placeholder="Опишете накратко вашия проблем или въпрос..."></textarea>
+        </div>
+        <button type="submit" class="btn-cta btn-cta-sage" style="width:100%;justify-content:center;padding:16px">Изпрати запитване →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo" style="color:var(--white);font-size:1.3rem">Д-р Иванова <span style="color:var(--gold)">Дентал</span></a>
+        <p>Модерна стоматологична клиника в сърцето на София. Грижим се за вашата усмивка от 2009 година с внимание, професионализъм и съвременни технологии.</p>
+      </div>
+      <div>
+        <h4>Навигация</h4>
+        <ul>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#about">За нас</a></li>
+          <li><a href="#gallery">Галерия</a></li>
+          <li><a href="#testimonials">Отзиви</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Услуги</h4>
+        <ul>
+          <li><a href="#">Имплантология</a></li>
+          <li><a href="#">Естетична стоматология</a></li>
+          <li><a href="#">Ортодонтия</a></li>
+          <li><a href="#">Избелване</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакти</h4>
+        <ul>
+          <li><a href="tel:+359888123456">0888 123 456</a></li>
+          <li><a href="mailto:info@dr-ivanova-dental.bg">info@dr-ivanova-dental.bg</a></li>
+          <li><a href="#">бул. Витоша 89, София</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Д-р Иванова Дентал. Всички права запазени.
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Header scroll effect
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const header = document.getElementById('header');
+  header.classList.toggle('scrolled', window.scrollY > 80);
+  lastScroll = window.scrollY;
+});
+
+// Mobile nav
+function toggleNav() {
+  document.getElementById('nav').classList.toggle('open');
+}
+function closeNav() {
+  document.getElementById('nav').classList.remove('open');
+}
+
+// FAQ accordion
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const wasActive = item.classList.contains('active');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+  if (!wasActive) item.classList.add('active');
+}
+
+// Hero parallax
+window.addEventListener('scroll', () => {
+  const hero = document.querySelector('.hero-bg img');
+  if (hero) {
+    const scroll = window.scrollY;
+    hero.style.transform = `scale(1.05) translateY(${scroll * 0.15}px)`;
+  }
+});
+</script>
+</body>
+</html>
