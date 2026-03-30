@@ -7,6 +7,7 @@
 <meta name="description" content="Д-р Иванова Дентал — модерна стоматологична клиника в сърцето на София. Имплантология, естетична стоматология, ортодонтия. Запазете час онлайн.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -42,7 +43,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:1.2}
 .header.scrolled .nav a{color:var(--text-light)}
 .header.scrolled .nav a:hover{color:var(--sage)}
 .header-phone{display:flex;align-items:center;gap:8px;font-weight:600;font-size:0.95rem;color:var(--white);transition:color 0.4s}
-.header-phone svg{width:18px;height:18px;fill:currentColor}
+.header-phone i{font-size:16px}
 .header.scrolled .header-phone{color:var(--charcoal)}
 .btn-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:var(--gold);color:var(--white);font-family:var(--font-body);font-weight:600;font-size:0.9rem;border:none;border-radius:50px;cursor:pointer;transition:all 0.3s;letter-spacing:0.02em}
 .btn-cta:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(197,165,90,0.3)}
@@ -111,7 +112,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:1.2}
 .about-content p{color:var(--text-light);margin-bottom:16px;line-height:1.8}
 .about-features{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
 .about-feature{display:flex;align-items:center;gap:10px;font-weight:500;font-size:0.92rem;color:var(--charcoal)}
-.about-feature .check{width:24px;height:24px;background:var(--sage);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:0.7rem;flex-shrink:0}
+.about-feature .check{width:24px;height:24px;background:var(--sage);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:0.65rem;flex-shrink:0}
 
 /* ========= GALLERY ========= */
 .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -127,6 +128,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:1.2}
 .testimonial-card{background:var(--white);border-radius:var(--radius);padding:36px 28px;border:1px solid rgba(0,0,0,0.05);transition:all var(--transition)}
 .testimonial-card:hover{box-shadow:var(--shadow)}
 .testimonial-stars{color:var(--gold);font-size:1rem;letter-spacing:2px;margin-bottom:16px}
+.testimonial-stars i{margin-right:2px}
 .testimonial-text{font-size:0.95rem;color:var(--text-light);line-height:1.8;margin-bottom:20px;font-style:italic}
 .testimonial-author{display:flex;align-items:center;gap:14px}
 .testimonial-avatar{width:48px;height:48px;border-radius:50%;object-fit:cover}
@@ -138,7 +140,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:1.2}
 .faq-item{border-bottom:1px solid rgba(0,0,0,0.08);overflow:hidden}
 .faq-question{display:flex;align-items:center;justify-content:space-between;padding:24px 0;cursor:pointer;font-weight:600;font-size:1.02rem;color:var(--charcoal);transition:color 0.3s}
 .faq-question:hover{color:var(--sage)}
-.faq-icon{width:32px;height:32px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;transition:all 0.3s;flex-shrink:0;font-size:1.2rem;color:var(--sage)}
+.faq-icon{width:32px;height:32px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;transition:all 0.3s;flex-shrink:0;font-size:0.85rem;color:var(--sage)}
 .faq-item.active .faq-icon{background:var(--sage);color:var(--white);transform:rotate(45deg)}
 .faq-answer{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.4s ease}
 .faq-item.active .faq-answer{max-height:300px}
@@ -218,7 +220,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:1.2}
     </nav>
     <div style="display:flex;align-items:center;gap:20px">
       <a href="tel:+359888123456" class="header-phone">
-        <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/></svg>
+        <i class="fa-solid fa-phone"></i>
         0888 123 456
       </a>
       <a href="#contact" class="btn-cta">Запази час</a>
@@ -235,12 +237,12 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:1.2}
     <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&q=80" alt="Модерен стоматологичен кабинет" loading="eager">
   </div>
   <div class="hero-content">
-    <div class="hero-badge reveal"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px;margin-right:6px"><path d="M12 1l2.5 7.5H22l-6 4.5 2.5 7.5L12 16l-6.5 4.5L8 13 2 8.5h7.5L12 1z"/></svg>Стоматологична клиника от 2009 г.</div>
+    <div class="hero-badge reveal"><i class="fa-solid fa-star" style="font-size:12px;margin-right:6px"></i>Стоматологична клиника от 2009 г.</div>
     <h1 class="reveal reveal-delay-1">Грижа за усмивката ви с <em>внимание към всеки детайл</em></h1>
     <p class="reveal reveal-delay-2">Модерна стоматология в сърцето на София. Д-р Иванова и екип ви предлагат индивидуален подход и съвременни технологии за красива и здрава усмивка.</p>
     <div class="hero-buttons reveal reveal-delay-3">
       <a href="#contact" class="btn-cta">Запази час →</a>
-      <a href="tel:+359888123456" class="btn-cta btn-cta-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>0888 123 456</a>
+      <a href="tel:+359888123456" class="btn-cta btn-cta-outline"><i class="fa-solid fa-phone" style="font-size:14px"></i> 0888 123 456</a>
     </div>
   </div>
 </section>
@@ -273,37 +275,37 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:1.2}
     </div>
     <div class="services-grid">
       <div class="service-card reveal">
-        <div class="service-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C9.5 2 7.5 4 7.5 6.5c0 2 1 3.5 1.5 5 .4 1.2.5 2.5.3 3.5-.3 1.5-.8 3.5-.8 5 0 1.1.9 2 2 2h3c1.1 0 2-.9 2-2 0-1.5-.5-3.5-.8-5-.2-1 .1-2.3.3-3.5.5-1.5 1.5-3 1.5-5C16.5 4 14.5 2 12 2z"/><path d="M10 12h4"/></svg></div>
+        <div class="service-icon"><i class="fa-solid fa-tooth"></i></div>
         <h3>Имплантология</h3>
         <p>Възстановяване на липсващи зъби с висококачествени импланти и естествен краен резултат.</p>
         <span class="service-link">Научи повече →</span>
       </div>
       <div class="service-card reveal reveal-delay-1">
-        <div class="service-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M19 14l.75 2.25L22 17l-2.25.75L19 20l-.75-2.25L16 17l2.25-.75L19 14z"/><path d="M5 17l.5 1.5L7 19l-1.5.5L5 21l-.5-1.5L3 19l1.5-.5L5 17z"/></svg></div>
+        <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
         <h3>Естетична стоматология</h3>
         <p>Фасети, бондинг и дизайн на усмивката за перфектен визуален ефект.</p>
         <span class="service-link">Научи повече →</span>
       </div>
       <div class="service-card reveal reveal-delay-2">
-        <div class="service-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="4" height="6" rx="1"/><rect x="10" y="9" width="4" height="6" rx="1"/><rect x="17" y="9" width="4" height="6" rx="1"/><path d="M7 12h3"/><path d="M14 12h3"/><path d="M5 9V7a2 2 0 012-2h10a2 2 0 012 2v2"/><path d="M5 15v2a2 2 0 002 2h10a2 2 0 002-2v-2"/></svg></div>
+        <div class="service-icon"><i class="fa-solid fa-teeth"></i></div>
         <h3>Ортодонтия</h3>
         <p>Невидими шини и брекети за правилна захапка при деца и възрастни.</p>
         <span class="service-link">Научи повече →</span>
       </div>
       <div class="service-card reveal reveal-delay-3">
-        <div class="service-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M8.5 7.5c.3-.3.7-.5 1-.5"/><path d="M12 12c-4 0-7 2-7 5v1h14v-1c0-3-3-5-7-5z"/><path d="M15 4.5c.5.5.8 1.2.8 2"/></svg></div>
+        <div class="service-icon"><i class="fa-solid fa-child"></i></div>
         <h3>Детска стоматология</h3>
         <p>Нежна грижа в приятна обстановка — формираме добри навици от малки.</p>
         <span class="service-link">Научи повече →</span>
       </div>
       <div class="service-card reveal reveal-delay-4">
-        <div class="service-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C9.5 2 7.5 4 7.5 6.5c0 2 1 3.5 1.5 5 .4 1.2.5 2.5.3 3.5-.3 1.5-.8 3.5-.8 5 0 1.1.9 2 2 2h3c1.1 0 2-.9 2-2 0-1.5-.5-3.5-.8-5-.2-1 .1-2.3.3-3.5.5-1.5 1.5-3 1.5-5C16.5 4 14.5 2 12 2z"/><path d="M9 6.5l6 0" opacity="0.4"/><path d="M17 3l1 2-1 2"/><path d="M19 4h2"/></svg></div>
+        <div class="service-icon"><i class="fa-solid fa-sun"></i></div>
         <h3>Професионално избелване</h3>
         <p>Безопасно и ефективно избелване до 8 нюанса по-бяло за едно посещение.</p>
         <span class="service-link">Научи повече →</span>
       </div>
       <div class="service-card reveal reveal-delay-5">
-        <div class="service-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2l4 4 4-4"/><path d="M12 6v4"/><path d="M5 12h14"/><path d="M7.5 12c-1 2-1.5 4-1.5 6 0 2.2 1.8 4 4 4h4c2.2 0 4-1.8 4-4 0-2-.5-4-1.5-6"/><circle cx="10" cy="16" r="1" fill="currentColor" stroke="none"/><circle cx="14" cy="16" r="1" fill="currentColor" stroke="none"/></svg></div>
+        <div class="service-icon"><i class="fa-solid fa-syringe"></i></div>
         <h3>Орална хирургия</h3>
         <p>Екстракции, костни присадки и хирургични процедури с минимален дискомфорт.</p>
         <span class="service-link">Научи повече →</span>
@@ -329,12 +331,12 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:1.2}
         <p>Д-р Мария Иванова основава клиниката през 2009 г. с една ясна визия — да предлага стоматология от световно ниво в уютна, приветлива обстановка.</p>
         <p>Нашият екип от 8 специалисти комбинира най-новите технологии — дигитален скенер, 3D планиране, лазерно лечение — с индивидуален подход към всеки пациент.</p>
         <div class="about-features">
-          <div class="about-feature"><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Дигитален скенер</div>
-          <div class="about-feature"><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> 3D планиране</div>
-          <div class="about-feature"><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Лазерно лечение</div>
-          <div class="about-feature"><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Седация при нужда</div>
-          <div class="about-feature"><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Гаранция за импланти</div>
-          <div class="about-feature"><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Безлихвено разсрочване</div>
+          <div class="about-feature"><span class="check"><i class="fa-solid fa-check"></i></span> Дигитален скенер</div>
+          <div class="about-feature"><span class="check"><i class="fa-solid fa-check"></i></span> 3D планиране</div>
+          <div class="about-feature"><span class="check"><i class="fa-solid fa-check"></i></span> Лазерно лечение</div>
+          <div class="about-feature"><span class="check"><i class="fa-solid fa-check"></i></span> Седация при нужда</div>
+          <div class="about-feature"><span class="check"><i class="fa-solid fa-check"></i></span> Гаранция за импланти</div>
+          <div class="about-feature"><span class="check"><i class="fa-solid fa-check"></i></span> Безлихвено разсрочване</div>
         </div>
       </div>
     </div>
@@ -375,7 +377,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:1.2}
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card reveal">
-        <div class="testimonial-stars"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
         <p class="testimonial-text">"Цял живот се страхувах от зъболекар. Тук за първи път се почувствах спокойна. Екипът е невероятно внимателен и професионален."</p>
         <div class="testimonial-author">
           <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Мария" loading="lazy">
@@ -386,7 +388,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:1.2}
         </div>
       </div>
       <div class="testimonial-card reveal reveal-delay-1">
-        <div class="testimonial-stars"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
         <p class="testimonial-text">"Направих си импланти и разликата е невероятна. Изглеждат напълно естествено. Благодаря на целия екип за търпението!"</p>
         <div class="testimonial-author">
           <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Георги" loading="lazy">
@@ -397,7 +399,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:1.2}
         </div>
       </div>
       <div class="testimonial-card reveal reveal-delay-2">
-        <div class="testimonial-stars"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
         <p class="testimonial-text">"Водя и двете си деца тук. Обожават д-р Иванова! Никога не плачат, което за мен е най-добрият показател."</p>
         <div class="testimonial-author">
           <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Елена" loading="lazy">
@@ -422,35 +424,35 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:1.2}
       <div class="faq-item reveal">
         <div class="faq-question" onclick="toggleFaq(this)">
           Колко струва първичният преглед?
-          <span class="faq-icon">+</span>
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
         </div>
         <div class="faq-answer"><p>Първичният преглед с дигитална диагностика е на стойност 60 лв. Включва пълен оглед, рентгенова снимка и индивидуален план за лечение. При започване на лечение в рамките на 30 дни — прегледът е безплатен.</p></div>
       </div>
       <div class="faq-item reveal reveal-delay-1">
         <div class="faq-question" onclick="toggleFaq(this)">
           Работите ли с Националната здравноосигурителна каса?
-          <span class="faq-icon">+</span>
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
         </div>
         <div class="faq-answer"><p>Да, имаме договор с НЗОК. Покриваме обтурации, екстракции и профилактични прегледи по здравна книжка. За подробности за покритието — свържете се с нас.</p></div>
       </div>
       <div class="faq-item reveal reveal-delay-2">
         <div class="faq-question" onclick="toggleFaq(this)">
           Колко време отнема поставянето на имплант?
-          <span class="faq-icon">+</span>
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
         </div>
         <div class="faq-answer"><p>Самата хирургична процедура отнема 30-60 минути на имплант. Периодът на интеграция е 3-6 месеца, след което се поставя короната. Предлагаме и експресни импланти с натоварване в рамките на 24 часа.</p></div>
       </div>
       <div class="faq-item reveal reveal-delay-3">
         <div class="faq-question" onclick="toggleFaq(this)">
           Болезнено ли е избелването на зъби?
-          <span class="faq-icon">+</span>
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
         </div>
         <div class="faq-answer"><p>Професионалното избелване е безболезнена процедура. Възможна е лека чувствителност в първите 24-48 часа, която отшумява напълно. Използваме съвременни гелове с минимално дразнене.</p></div>
       </div>
       <div class="faq-item reveal reveal-delay-4">
         <div class="faq-question" onclick="toggleFaq(this)">
           Предлагате ли разсрочено плащане?
-          <span class="faq-icon">+</span>
+          <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
         </div>
         <div class="faq-answer"><p>Да! Предлагаме безлихвено разсрочване до 12 месеца за процедури над 500 лв. Работим и с TBI Bank за кредитиране на по-мащабни лечения. Приемаме всички карти.</p></div>
       </div>
@@ -469,28 +471,28 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:1.2}
     <div class="contact-grid">
       <div class="contact-info reveal">
         <div class="contact-item">
-          <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+          <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
           <div>
             <h4>Адрес</h4>
             <p>бул. Витоша 89, ет. 2<br>1463 София, България</p>
           </div>
         </div>
         <div class="contact-item">
-          <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
           <div>
             <h4>Телефон</h4>
             <p><a href="tel:+359888123456" style="color:var(--sage);font-weight:600">0888 123 456</a></p>
           </div>
         </div>
         <div class="contact-item">
-          <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg></div>
+          <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
           <div>
             <h4>Имейл</h4>
             <p>info@dr-ivanova-dental.bg</p>
           </div>
         </div>
         <div class="contact-item">
-          <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div class="contact-icon"><i class="fa-regular fa-clock"></i></div>
           <div>
             <h4>Работно време</h4>
             <p>Пон – Пет: 08:30 – 19:00<br>Събота: 09:00 – 14:00<br>Неделя: почивен ден</p>
