@@ -50,9 +50,13 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:1.2}
 .btn-cta-outline:hover{border-color:var(--white);background:rgba(255,255,255,0.1)}
 .btn-cta-sage{background:var(--sage);color:var(--white)}
 .btn-cta-sage:hover{background:var(--sage-light);box-shadow:0 8px 24px rgba(107,127,94,0.3)}
-.mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
-.mobile-toggle span{width:24px;height:2px;background:var(--white);transition:all 0.3s}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;position:relative;z-index:1001}
+.mobile-toggle span{width:24px;height:2px;background:var(--white);transition:all 0.3s;display:block}
+.mobile-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.mobile-toggle.active span:nth-child(2){opacity:0}
+.mobile-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .header.scrolled .mobile-toggle span{background:var(--charcoal)}
+.mobile-toggle.active span{background:var(--white)!important}
 
 /* ========= HERO ========= */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
@@ -215,7 +219,7 @@ h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;line-height:1.2}
         0888 123 456
       </a>
       <a href="#contact" class="btn-cta">Запази час</a>
-      <div class="mobile-toggle" id="menuToggle" onclick="toggleNav()">
+      <div class="mobile-toggle" id="menuToggle" onclick="toggleNav()" role="button" aria-label="Отвори меню" aria-expanded="false">
         <span></span><span></span><span></span>
       </div>
     </div>
@@ -590,11 +594,23 @@ window.addEventListener('scroll', () => {
 
 // Mobile nav
 function toggleNav() {
-  document.getElementById('nav').classList.toggle('open');
+  const nav = document.getElementById('nav');
+  const toggle = document.getElementById('menuToggle');
+  const isOpen = nav.classList.toggle('open');
+  toggle.classList.toggle('active', isOpen);
+  toggle.setAttribute('aria-expanded', isOpen);
+  toggle.setAttribute('aria-label', isOpen ? 'Затвори меню' : 'Отвори меню');
+  document.body.style.overflow = isOpen ? 'hidden' : '';
 }
 function closeNav() {
   document.getElementById('nav').classList.remove('open');
+  const toggle = document.getElementById('menuToggle');
+  toggle.classList.remove('active');
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-label', 'Отвори меню');
+  document.body.style.overflow = '';
 }
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeNav(); });
 
 // FAQ accordion
 function toggleFaq(el) {
