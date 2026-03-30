@@ -307,6 +307,12 @@
       display: none;
     }
 
+    @media (max-width: 968px) {
+      .mobile-panel {
+        display: flex;
+      }
+    }
+
     .hero {
       position: relative;
       min-height: 100vh;
@@ -996,16 +1002,19 @@
         position: fixed;
         inset: 0;
         z-index: 999;
-        background: rgba(15, 15, 15, 0.98);
+        background: #0F0F0F;
         padding: 120px 24px 40px;
+        display: flex;
         flex-direction: column;
         justify-content: flex-start;
         gap: 24px;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         pointer-events: none;
       }
 
       .mobile-panel.open {
-        display: flex;
+        transform: translateX(0);
         pointer-events: auto;
       }
 
@@ -1257,10 +1266,10 @@
               <span style="font-size:0.85rem;color:#A0A0A0;">Базирано на 127 отзива</span>
             </div>
           </div>
-          <div style="display:inline-flex;align-items:center;gap:12px;padding:12px 20px;background:#1A1A1A;border:1px solid rgba(255,255,255,0.08);border-radius:10px;">
-            <svg width="40" height="48" viewBox="0 0 50 55" aria-hidden="true"><path d="M25 0 L50 10 L50 30 C50 42 38 50 25 55 C12 50 0 42 0 30 L0 10 Z" fill="#1565C0"/><path d="M18 16h4v8h6v-8h4v22h-4V28h-6v10h-4z" fill="white"/></svg>
+          <div style="display:inline-flex;align-items:center;gap:14px;padding:14px 24px;background:#1A1A1A;border:1px solid rgba(255,255,255,0.08);border-radius:10px;">
+            <img src="nhif-logo.png" alt="НЗОК лого" width="48" height="53" style="object-fit:contain;">
             <div>
-              <div style="font-weight:700;color:#90CAF9;font-size:1rem;">НЗОК</div>
+              <div style="font-weight:700;color:#90CAF9;font-size:1rem;">Договор с НЗОК</div>
               <div style="font-size:0.8rem;color:#A0A0A0;">Работим с Национална<br>здравноосигурителна каса</div>
             </div>
           </div>
