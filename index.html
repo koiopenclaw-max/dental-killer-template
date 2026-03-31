@@ -1558,6 +1558,18 @@
       link.addEventListener("click", closeMenu);
     });
 
+    // ESC to close menu
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+
+    // Click outside to close menu
+    document.addEventListener("click", (e) => {
+      if (!menuToggle.contains(e.target) && !mobilePanel.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
     faqButtons.forEach((button) => {
       button.addEventListener("click", () => {
         const item = button.parentElement;
